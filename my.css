@@ -1,0 +1,65 @@
+div.app{
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    display: inline-block;
+}
+div.player{
+    text-align: center;
+    width: 45%;
+    display: inline-block;
+    margin-left: 20px;
+}
+div.progress{
+    transition: 700ms;
+    height: 50px;
+    display: inline-block;
+    background-color: green;
+    position: relative;
+    float: left;
+    color: #fff;
+    font-size: 15pt;
+}
+div.bg-progress{
+    display: inline-block;
+    width: 100%;
+}
+.buttons{
+    padding: 10px;
+}
+.button{
+    padding: 15px;
+    background-color: lightgreen;
+    border: 0;
+    font-size: 15pt;
+    cursor: pointer;
+    margin-right: 15px;
+    box-shadow: 0px 0px 5px #000;
+    outline: none;
+}
+.button:hover{
+    background-color: #fff;
+}
+.box{
+    padding: 30px; text-align: center; margin-top: 50px;
+    box-shadow: 0px 0px 10px #000;
+}
+.box-mini{
+    padding: 10px; text-align: center; margin-top: 15px;
+    box-shadow: 0px 0px 10px #000; 
+}
+.bg-red{
+    background-color: red;
+    
+}
+.bg-orange{
+    background-color: orange;
+}
+.bg-white{
+    background-color: #fff;
+}
+.bg-green{
+    background-color: green; 
+    color: #fff;
+}

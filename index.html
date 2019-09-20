@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="my.css">
+</head>
+<body>
+    <div id="app" class = "app">
+        <template v-if="startGame">
+        <div class="player">
+            <h1> {{player.name}} </h1>
+            <div class="bg-red bg-progress">
+                <div class="progress" :style=" {width: player.health + '%'}">
+                    {{ Math.floor(player.health) }}
+                </div>
+            </div>
+            
+
+        </div>
+        <div class="player">
+            <h1> {{enemy.name}} </h1>
+            <div class = "bg-red bg-progress">
+                <div 
+                class="progress" 
+                :style=" {width: enemy.health + '%'}"
+                style="float:right"
+                > {{ Math.floor(enemy.health) }} </div>
+            </div>
+            
+        </div>
+        </template>
+        <div v-if="!startGame" class="box">
+            <h1>Click on the "New Game" button to begin</h1>
+            <button @click="setGame($event, true)" class="button" style="margin-left: -70px;">
+                New Game
+            </button>
+        </div>
+        <div v-else class="box">
+            <button @click="player.attack($event,false)" class = "button bg-red">Attack</button>
+            <button @click = "player.attack($event,true)" class = "button bg-orange">Skill</button>
+            <button @click = "player.healthPlus" class = "button">+ Health</button>
+            <button @click= "giveUp() " class = "button bg-white">Give Up</button>
+        </div>
+        <div class="box" v-if="logs.length > 0 && startGame">
+            <div v-for="log in logs">
+                <div 
+                    :class="log.who == player.name ? 'bg-green' : 'bg-red'"
+                    class="box-mini"
+                >
+                    {{log.msg}} 
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./vue.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
